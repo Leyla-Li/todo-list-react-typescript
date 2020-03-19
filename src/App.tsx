@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { TodoListItem } from './TodoListItem';
-import { Todo } from './types';
+import { Todo, ToggleTodo } from './types';
 
 const initialTodos: Array<Todo> = [
   {text: 'Cook lunch', complete: true}, 
@@ -11,7 +11,7 @@ const initialTodos: Array<Todo> = [
 const App: React.FC = () => {
   const [todos, setTodos] = useState(initialTodos);
 
-  const toggleTodo = (selectedTodo: Todo) => {
+  const toggleTodo: ToggleTodo = selectedTodo => {
     const newTodos = todos.map(todo => {
       if (todo === selectedTodo) {
         return {
@@ -27,8 +27,8 @@ const App: React.FC = () => {
 
   return (
     <React.Fragment>
-    <TodoListItem todo={todos[0]} />
-    <TodoListItem todo={todos[1]} />
+    <TodoListItem todo={todos[0]} toggleTodo={toggleTodo} />
+    <TodoListItem todo={todos[1]} toggleTodo={toggleTodo} />
     </React.Fragment>
   );
 }
