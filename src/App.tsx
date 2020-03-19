@@ -10,7 +10,7 @@ const todos: Array<Todo> = [
 
 function App() {
   return (
-    <TodoListItem />
+    <TodoListItem todo={todos[0]} />
   );
 }
 
