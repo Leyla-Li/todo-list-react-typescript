@@ -10,7 +10,10 @@ const todos: Array<Todo> = [
 
 function App() {
   return (
+    <React.Fragment>
     <TodoListItem todo={todos[0]} />
+    <TodoListItem todo={todos[1]} />
+    </React.Fragment>
   );
 }
 
