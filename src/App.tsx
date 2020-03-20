@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import { TodoListItem } from './TodoListItem';
 import { Todo, ToggleTodo } from './types';
+import { TodoList } from './TodoList';
 
 const initialTodos: Array<Todo> = [
   {text: 'Cook lunch', complete: true}, 
@@ -27,8 +27,7 @@ const App: React.FC = () => {
 
   return (
     <React.Fragment>
-    <TodoListItem todo={todos[0]} toggleTodo={toggleTodo} />
-    <TodoListItem todo={todos[1]} toggleTodo={toggleTodo} />
+    <TodoList todos={todos} toggleTodo={toggleTodo} />
     </React.Fragment>
   );
 }
