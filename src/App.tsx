@@ -16,8 +16,8 @@ const App: React.FC = () => {
       if (todo === selectedTodo) {
         return {
           ...todo,
-          completed: !todo.complete
-        }
+          complete: !todo.complete
+        };
       }
       return todo;
     });
